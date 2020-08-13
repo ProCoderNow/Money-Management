@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 
 #Main Screen
 master = Tk()
-master.title('Banking App')
+master.title('Money Management')
 
 #Functions
 def finish_reg():
@@ -89,8 +89,8 @@ def login_session():
                 Label(account_dashboard, text="Welcome "+name, font=('Calibri',12)).grid(row=1,sticky=N,pady=5)
                 #Buttons
                 Button(account_dashboard, text="Personal Details",font=('Calibri',12),width=30,command=personal_details).grid(row=2,sticky=N,padx=10)
-                Button(account_dashboard, text="Withdraw",font=('Calibri',12),width=30,command=deposit).grid(row=3,sticky=N,padx=10)
-                Button(account_dashboard, text="Deposit",font=('Calibri',12),width=30,command=withdraw).grid(row=4,sticky=N,padx=10)
+                Button(account_dashboard, text="Deposit",font=('Calibri',12),width=30,command=deposit).grid(row=3,sticky=N,padx=10)
+                Button(account_dashboard, text="Withdraw",font=('Calibri',12),width=30,command=withdraw).grid(row=4,sticky=N,padx=10)
                 Label(account_dashboard).grid(row=5,sticky=N,pady=10)
                 return
             else:
@@ -110,9 +110,9 @@ def deposit():
     details_balance = user_details[4]
     #Deposit Screen
     deposit_screen = Toplevel(master)
-    deposit_screen.title('Withdraw')
+    deposit_screen.title('Deposit')
     #Label
-    Label(deposit_screen, text="Withdraw", font=('Calibri',12)).grid(row=0,sticky=N,pady=10)
+    Label(deposit_screen, text="Deposit", font=('Calibri',12)).grid(row=0,sticky=N,pady=10)
     current_balance_label = Label(deposit_screen, text="Current Balance : £"+details_balance, font=('Calibri',12))
     current_balance_label.grid(row=1,sticky=W)
     Label(deposit_screen, text="Amount : ", font=('Calibri',12)).grid(row=2,sticky=W)
@@ -158,9 +158,9 @@ def withdraw():
     details_balance = user_details[4]
     #Deposit Screen
     withdraw_screen = Toplevel(master)
-    withdraw_screen.title('Deposit')
+    withdraw_screen.title('Withdraw')
     #Label
-    Label(withdraw_screen, text="Deposit", font=('Calibri',12)).grid(row=0,sticky=N,pady=10)
+    Label(withdraw_screen, text="Withdraw", font=('Calibri',12)).grid(row=0,sticky=N,pady=10)
     current_balance_label = Label(withdraw_screen, text="Current Balance : £"+details_balance, font=('Calibri',12))
     current_balance_label.grid(row=1,sticky=W)
     Label(withdraw_screen, text="Amount : ", font=('Calibri',12)).grid(row=2,sticky=W)
